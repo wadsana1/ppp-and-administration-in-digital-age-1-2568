@@ -115,7 +115,7 @@ export default function AddProduct() {
       htmlFor="last-name"
       className="block text-sm font-medium leading-6 text-gray-900"
     >
-      Gmail
+      อีเมล
     </label>
     <div className="mt-2">
     <input
