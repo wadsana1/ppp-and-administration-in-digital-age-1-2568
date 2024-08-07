@@ -96,7 +96,7 @@ export default function AddProduct() {
       htmlFor="last-name"
       className="block text-sm font-medium leading-6 text-gray-900"
     >
-      หน่วยงานที่นำนโยบายไปปฎิบัติ
+      หน่วยงานที่นำนโยบายไปปฏิบัติ
     </label>
     <div className="mt-2">
     <input
