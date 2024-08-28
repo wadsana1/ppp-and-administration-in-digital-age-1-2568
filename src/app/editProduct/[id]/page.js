@@ -1,6 +1,5 @@
 //app\editProduct\[id]\page.js
-import EditProductForm from "@/components/EditProductForm";
-
+import EditProductForm from "@/components/EditProductFrom";
 const getProductById = async (id) => {
   try {
     const res = await fetch(`http://localhost:3000/api/products/${id}`, {
@@ -20,7 +19,7 @@ const getProductById = async (id) => {
 export default async function EditProduct({ params }) {
   const { id } = params;
   const { product } = await getProductById(id);
-  const { 
+  const {
     name,
     project,
     implementation,
@@ -33,7 +32,7 @@ export default async function EditProduct({ params }) {
     strength,
     development,
     suggestion,
-     } = product;
+  } = product;
 
   return (
     <EditProductForm

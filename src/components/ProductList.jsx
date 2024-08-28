@@ -71,7 +71,7 @@ export default async function ProductsList() {
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <Image
-                          src={element.image}
+                          src={element.Image}
                           alt={element.name}
                           width={80}
                           height={80}
