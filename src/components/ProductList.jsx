@@ -1,7 +1,10 @@
 //components\EditProductForm.jsx
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import EditIcon from '@mui/icons-material/Edit';
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
-import Image from "next/image";
+// import Image from "next/image";
 
 const getProducts = async () => {
   try {
@@ -30,7 +33,7 @@ export default async function ProductsList() {
             การติดตามและประเมินผลยุทธศาสตร์ชาติ 20 ปี
           </h1>
         </div>
-        <div className="text-right">
+        <div className="text-left ml-16">
           <Link className="btn btn-primary" href={"/addProduct"}>
             Add Product
           </Link>
@@ -55,7 +58,11 @@ export default async function ProductsList() {
               <th>จุดแข็ง</th>
               <th>แนวทางเสริม(จุดแข็ง)</th>
               <th>ข้อเสนอแนะ</th>
-              <th>Edit & Delete</th>
+              <th>
+                <div className='flex justify-center items-center font-bold'>
+                Edit & Delete
+                </div>
+                </th>
             </tr>
           </thead>
           <tbody>
@@ -66,7 +73,7 @@ export default async function ProductsList() {
                     <input type="checkbox" className="checkbox" />
                   </label>
                 </th>
-                <td>
+                {/* <td>
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
@@ -83,7 +90,10 @@ export default async function ProductsList() {
                       <div className="font-bold">{element.name}</div>
                     </div>
                   </div>
-                </td>
+                </td> */}
+
+                <td>{element.name}</td>
+                <td>{element.project}</td>
                 <td>{element.implementation}</td>
                 <td>{element.email}</td>
                 <td>{element.mobile}</td>
@@ -93,10 +103,14 @@ export default async function ProductsList() {
                 <td>{element.weak}</td>
                 <td>{element.strength}</td>
                 <td>{element.development}</td>
-                <td>{element. suggestion}</td>
+                <td>{element.suggestion}</td>
+                {/* <td></td> */}
                 <th>
                   <Link href={`/editProduct/${element._id}`}>
-                    <button className="btn btn-primary">Edit</button>
+                    {/* <button className="btn btn-primary">Edit</button> */}
+                    <Button variant="contained" color="success">
+                      <EditIcon/>
+                    </Button>
                   </Link>
                   <RemoveBtn id={element._id} />
                 </th>

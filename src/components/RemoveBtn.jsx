@@ -1,6 +1,8 @@
 //components\RemoveBtn.jsx
 "use client";
-
+import * as React from "react";
+import Button from "@mui/material/Button";
+import DeleteIcon from '@mui/icons-material/Delete';
 import { useRouter } from "next/navigation";
 
 export default function RemoveBtn({ id }) {
@@ -20,8 +22,11 @@ export default function RemoveBtn({ id }) {
   };
 
   return (
-    <button onClick={removeProduct} className="btn btn-error ml-2">
-      Delete
-    </button>
+    // <button onClick={removeProduct} className="btn btn-error ml-2">
+    //   Delete
+    // </button>
+    <Button onClick={removeProduct} variant="contained" color="success">
+      <DeleteIcon/>
+    </Button>
   );
 }
