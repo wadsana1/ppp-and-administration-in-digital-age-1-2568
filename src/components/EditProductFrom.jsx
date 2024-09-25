@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Button from "@mui/material/Button";
 
 export default function EditProductForm({
   id,
@@ -72,8 +73,16 @@ export default function EditProductForm({
 
   return (
     <>
-      <div className="flex justify-between items-center">
-        <h1 className="font-bold py-10 text-2xl">Update Product</h1>
+      <div className="flex justify-center items-center">
+        {/* <h1 className="font-bold py-10 text-2xl">Update Product</h1> */}
+        <Button
+          variant="contained"
+          color="success"
+          className="font-bold px-20 py-3 mt-5"
+          size="small"
+        >
+          Update Product
+        </Button>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-10 ml-24">
@@ -312,10 +321,19 @@ export default function EditProductForm({
             </div>
           </div>
           <div className="sm:col-span-3">
-            <div className="mt-2">
-              <button className="btn btn-primary w-full max-w-xs ">
+            <div className="flex justify-center items-center mt-2">
+              {/* <button className="btn btn-primary w-full max-w-xs ">
                 Update Product
-              </button>
+              </button> */}
+              <Button
+                type="submit"
+                variant="contained"
+                color="success"
+                className="font-bold px-20 py-3 mt-5"
+                size="small"
+              >
+                Update Product
+              </Button>
             </div>
           </div>
         </div>

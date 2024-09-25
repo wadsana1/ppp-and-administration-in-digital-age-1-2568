@@ -37,22 +37,23 @@ export default async function ProductsList() {
           <Link href={"/addProduct"}>
             <Button
               variant="contained"
-              color="primary"
+              color="success"
               className="font-bold py-3"
               size="small"
             >
-              Add Product
+              เพิ่มรายการ
             </Button>
           </Link>
         </div>
         <table className="table">
           <thead>
             <tr>
-              <th>
+              {/* <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
                 </label>
-              </th>
+              </th> */}
+              <th>#</th>
               <th>ยุทธศาสตร์ชาติ</th>
               <th>โครงการ</th>
               <th>หน่วยงานที่นำนโยบายไปปฏิบัติ</th>
@@ -73,32 +74,9 @@ export default async function ProductsList() {
             </tr>
           </thead>
           <tbody>
-            {products.map((element) => (
+            {products.map((element, index) => (
               <tr className="hover" key={element._id}>
-                <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
-                </th>
-                {/* <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <Image
-                          src={element.Image}
-                          alt={element.name}
-                          width={80}
-                          height={80}
-                          className="rounded-lg"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold">{element.name}</div>
-                    </div>
-                  </div>
-                </td> */}
-
+                <th>{index + 1}</th>
                 <td>{element.name}</td>
                 <td>{element.project}</td>
                 <td>{element.implementation}</td>
