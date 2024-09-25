@@ -1,7 +1,7 @@
 //components\EditProductForm.jsx
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import EditIcon from '@mui/icons-material/Edit';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import EditIcon from "@mui/icons-material/Edit";
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 // import Image from "next/image";
@@ -34,8 +34,15 @@ export default async function ProductsList() {
           </h1>
         </div>
         <div className="text-left ml-16">
-          <Link className="btn btn-primary" href={"/addProduct"}>
-            Add Product
+          <Link href={"/addProduct"}>
+            <Button
+              variant="contained"
+              color="primary"
+              className="font-bold py-3"
+              size="small"
+            >
+              Add Product
+            </Button>
           </Link>
         </div>
         <table className="table">
@@ -59,10 +66,10 @@ export default async function ProductsList() {
               <th>แนวทางเสริม(จุดแข็ง)</th>
               <th>ข้อเสนอแนะ</th>
               <th>
-                <div className='flex justify-center items-center font-bold'>
-                Edit & Delete
+                <div className="flex justify-center items-center font-bold">
+                  Edit & Delete
                 </div>
-                </th>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -106,13 +113,19 @@ export default async function ProductsList() {
                 <td>{element.suggestion}</td>
                 {/* <td></td> */}
                 <th>
-                  <Link href={`/editProduct/${element._id}`}>
-                    {/* <button className="btn btn-primary">Edit</button> */}
-                    <Button variant="contained" color="success">
-                      <EditIcon/>
-                    </Button>
-                  </Link>
-                  <RemoveBtn id={element._id} />
+                  <div className="flex justify-center items-center">
+                    <Link href={`/editProduct/${element._id}`}>
+                      <Button
+                        variant="contained"
+                        color="success"
+                        className="mr-2"
+                        size="small"
+                      >
+                        <EditIcon />
+                      </Button>
+                    </Link>
+                    <RemoveBtn id={element._id} />
+                  </div>
                 </th>
               </tr>
             ))}
