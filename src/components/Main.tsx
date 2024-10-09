@@ -260,7 +260,7 @@ export default function Main() {
                   ได้แก่
                 </p>
                 <a
-                  href="/section1"
+                  href="/section4"
                   className="mt-3 text-indigo-500 inline-flex items-center"
                 >
                   Learn More
